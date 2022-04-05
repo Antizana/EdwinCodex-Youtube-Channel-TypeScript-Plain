@@ -1,19 +1,29 @@
 "use strict";
-const logDetails = (uid, item) => {
-    console.log(`${item} has a uid of ${uid}`);
+let greeting;
+// () => void
+let greeting1;
+greeting1 = (name, greet) => {
+    console.log(`${greet} says ${name}`);
 };
-const greeting = (user) => {
-    console.log(`${user.name} says hello`);
+// greeting1 = (name: string, greet: number): void => {
+//     console.log(`${greet} says ${name}`);
+// }
+let calculation;
+calculation = (numOne, numTwo, action) => {
+    if (action === "add")
+        return numOne = numTwo;
+    else
+        return numOne - numTwo;
 };
-const greetingAgain = (user) => {
-    console.log(`${user.name} says hello`);
+// calculation = (numOne: boolean, numTwo: string, action: string): number => {
+//     if (action === "add")
+//         return numOne = numTwo;
+//     else return numOne - numTwo;
+// }
+let logDetails;
+logDetails = (person) => {
+    console.log(`${person.name} is ${person.age} years old`);
 };
-const logDetails2 = (uid, item) => {
-    console.log(`${item} has a uid of ${uid}`);
-};
-const greeting2 = (user) => {
-    console.log(`${user.name} says hello`);
-};
-const greetingAgain2 = (user) => {
-    console.log(`${user.name} says hello`);
+logDetails = (person) => {
+    console.log(`${person.name} is ${person.age} years old`);
 };
