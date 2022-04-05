@@ -1,38 +1,19 @@
 "use strict";
-let greeting = () => {
-    console.log("Hello world");
+const logDetails = (uid, item) => {
+    console.log(`${item} has a uid of ${uid}`);
 };
-// greeting = "Hello";
-let greeting2;
-greeting2 = () => {
-    console.log("Hello world again");
+const greeting = (user) => {
+    console.log(`${user.name} says hello`);
 };
-const add = (a, b) => {
-    console.log(a + b);
+const greetingAgain = (user) => {
+    console.log(`${user.name} says hello`);
 };
-add(10, 5);
-// add(7, "10");
-// add(7, 10, 5);
-const add2 = (a, b, c) => {
-    console.log(a + b);
-    console.log(c);
+const logDetails2 = (uid, item) => {
+    console.log(`${item} has a uid of ${uid}`);
 };
-add2(7, 10); //prints c as undefined
-const add3 = (a, b, c = 10) => {
-    console.log(a + b);
-    console.log(c);
+const greeting2 = (user) => {
+    console.log(`${user.name} says hello`);
 };
-add3(7, 10);
-add3(7, 10, 15);
-add3(7, 10, "15");
-const minus = (a, b) => {
-    return a - b;
-};
-let result = minus(10, 7);
-// result = "Subtracting"
-const minus2 = (a, b) => {
-    return a - b;
-};
-const add4 = (a, b) => {
-    console.log(a + b);
+const greetingAgain2 = (user) => {
+    console.log(`${user.name} says hello`);
 };
