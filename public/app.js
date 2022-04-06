@@ -23,3 +23,21 @@ invoices.forEach((invoice) => {
     // invoice.client = 'Facebook'; // can't assign a value because it's readonly
     console.log(invoice.client, invoice.amount, invoice.format());
 });
+const me = {
+    name: 'Max',
+    age: 30,
+    speak(text) {
+        console.log(text);
+    },
+    spend(amount) {
+        console.log('I spent', amount);
+        return amount;
+    }
+    // skills: [],
+};
+console.log(me);
+let someone;
+const greetPerson = (person) => {
+    console.log('Hello,', person.name);
+};
+greetPerson(me);
