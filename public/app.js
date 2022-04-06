@@ -21,42 +21,33 @@ form.addEventListener('submit', (e) => {
     }
     list.render(document, type.value, 'end');
 });
-// GENERICS
-// const addUID = (object: object) => {
-// const addUID = <T>(object: T) => {
-// const addUID = <T extends object>(object: T) => {
-const addUID = (object) => {
-    let uid = Math.floor(Math.random() * 100);
-    return Object.assign(Object.assign({}, object), { uid });
-};
-let document1 = addUID({ name: 'Max', age: 28 });
-// let document2 = addUID({name: 10, age: 28});
-// let document2 = addUID("Hello");
-console.log(document1);
-console.log(document1.name);
-const document3 = {
+// ENUMS
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["BOOK"] = 1] = "BOOK";
+    ResourceType[ResourceType["AUTHOR"] = 2] = "AUTHOR";
+    ResourceType[ResourceType["FILM"] = 3] = "FILM";
+    ResourceType[ResourceType["DIRECTOR"] = 4] = "DIRECTOR";
+    ResourceType[ResourceType["PERSON"] = 5] = "PERSON";
+})(ResourceType || (ResourceType = {}));
+const document1 = {
     uid: 1,
-    resourceName: 'Resource',
-    data: { name: 'Max' }
+    resourceType: 3,
+    data: { title: 'name of the wind' }
 };
-// const document4 : Resource2 ={
-//     uid: 1,
-//     resourceName: 'Resource',
-//     data: 'Max'
-// }
-const document5 = {
-    uid: 1,
-    resourceName: 'Resource',
-    data: 'Max'
+const document2 = {
+    uid: 2,
+    resourceType: 4,
+    data: { name: 'John Doe' }
 };
-const document6 = {
-    uid: 1,
-    resourceName: 'Resource',
-    data: { name: 'Max' }
+const resource3 = {
+    uid: 3,
+    resourceType: ResourceType.BOOK,
+    data: { title: 'The Final Empire' }
 };
-const document7 = {
-    uid: 1,
-    resourceName: 'Resource',
-    data: ['Max', 'Anna']
+const resource4 = {
+    uid: 4,
+    resourceType: ResourceType.PERSON,
+    data: { name: 'John Doe' }
 };
-console.log(document6, document7);
+console.log(document1, document2, resource3, resource4);
