@@ -29,18 +29,38 @@ class Invoice {
         this.amount = a;
     }
     format() {
+        // this.client = "Microsoft"; // this does not work because it is a readonly property client
         return `${this.client} owes $${this.amount} for ${this.details}`;
     }
 }
 const invoice1 = new Invoice('Google', 'Web Development', 500);
 const invoice2 = new Invoice('Max', 'Computer', 200);
-console.log(invoice1, invoice2);
 let invoices = [];
-// invoices.push({name: "John"});
 invoices.push(invoice1);
 invoices.push(invoice2);
-console.log(invoices);
-invoice1.client = 'Facebook';
-invoice2.amount = 250;
-// invoice2.amount = "Mary"
-console.log(invoice1, invoice2);
+// invoices.forEach((invoice) => {
+//     console.log(invoice.client, invoice.details, invoice.amount, invoice.format()); //does not work because of private property details
+// });
+invoices.forEach((invoice) => {
+    // invoice.client = 'Facebook'; // can't assign a value because it's readonly
+    console.log(invoice.client, invoice.amount, invoice.format());
+});
+class OtherInvoice {
+    constructor(client, details, amount) {
+        this.client = client;
+        this.details = details;
+        this.amount = amount;
+    }
+    //Without modifiers this won't work
+    // constructor(
+    //     client: string,
+    //     details: string,
+    //     amount: number,
+    // ){}
+    format() {
+        return `${this.client} owes $${this.amount} for ${this.details}`;
+    }
+}
+const otherInvoice1 = new OtherInvoice('Google', 'Web Development', 500);
+const otherInvoice2 = new OtherInvoice('Microsoft', 'Computer', 200);
+console.log(otherInvoice1.format(), otherInvoice2.format());
