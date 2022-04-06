@@ -21,3 +21,26 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     console.log(type.value, toFrom.value, details.value, amount.value, amount.valueAsNumber);
 });
+// Classes
+class Invoice {
+    constructor(c, d, a) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+    format() {
+        return `${this.client} owes $${this.amount} for ${this.details}`;
+    }
+}
+const invoice1 = new Invoice('Google', 'Web Development', 500);
+const invoice2 = new Invoice('Max', 'Computer', 200);
+console.log(invoice1, invoice2);
+let invoices = [];
+// invoices.push({name: "John"});
+invoices.push(invoice1);
+invoices.push(invoice2);
+console.log(invoices);
+invoice1.client = 'Facebook';
+invoice2.amount = 250;
+// invoice2.amount = "Mary"
+console.log(invoice1, invoice2);
